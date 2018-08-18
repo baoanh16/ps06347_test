@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 27, 2018 7:35:54 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bean.NhanVien" table="NhanVien" schema="dbo" catalog="Test" optimistic-lock="version">
+        <id name="manv" type="int">
+            <column name="manv" />
+            <generator class="native" />
+        </id>
+        <property name="tennv" type="string">
+            <column name="tennv" not-null="true" />
+        </property>
+        <property name="diachi" type="string">
+            <column name="diachi" not-null="true" />
+        </property>
+        <property name="gioitinh" type="string">
+            <column name="gioitinh" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

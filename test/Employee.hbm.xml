@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2018 9:56:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="QLNhanVien" name="bean.Employee" optimistic-lock="version" schema="dbo" table="Employee">
+    <id name="empId" type="int">
+      <column name="empID"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="bean.Department" fetch="select" name="department">
+      <column length="8" name="departID" not-null="true"/>
+    </many-to-one>
+    <property name="empName" type="string">
+      <column name="empName" not-null="true"/>
+    </property>
+    <property name="empGender" type="boolean">
+      <column name="empGender" not-null="true"/>
+    </property>
+    <property name="empBirthday" type="date">
+      <column name="empBirthday"/>
+    </property>
+    <property name="empEmail" type="string">
+      <column length="100" name="empEmail"/>
+    </property>
+    <property name="empPhone" type="string">
+      <column length="50" name="empPhone"/>
+    </property>
+    <property name="empSalary" type="big_decimal">
+      <column name="empSalary" scale="4"/>
+    </property>
+    <property name="empNotes" type="string">
+      <column name="empNotes"/>
+    </property>
+    <property name="empPhoto" type="string">
+      <column length="200" name="empPhoto"/>
+    </property>
+  </class>
+</hibernate-mapping>

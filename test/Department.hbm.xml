@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2018 9:56:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="QLNhanVien" name="bean.Department" optimistic-lock="version" schema="dbo" table="Department">
+    <id name="departId" type="string">
+      <column length="8" name="departID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="departName" type="string">
+      <column name="departName"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="employees" table="Employee">
+      <key>
+        <column length="8" name="departID" not-null="true"/>
+      </key>
+      <one-to-many class="bean.Employee"/>
+    </set>
+  </class>
+</hibernate-mapping>

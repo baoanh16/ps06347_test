@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 12, 2018 9:56:47 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="QLNhanVien" name="bean.Account" optimistic-lock="version" schema="dbo" table="Account">
+    <id name="username" type="string">
+      <column length="16" name="username"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="password" type="string">
+      <column length="16" name="password" not-null="true"/>
+    </property>
+    <property name="fullname" type="string">
+      <column length="50" name="fullname"/>
+    </property>
+  </class>
+</hibernate-mapping>
